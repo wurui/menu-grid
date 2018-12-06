@@ -2,9 +2,25 @@
     <xsl:template match="/root" name="wurui.menu-grid">
         <!-- className 'J_OXMod' required  -->
         <div class="J_OXMod oxmod-menu-grid" ox-mod="menu-grid">
-            <h1>
-                This is mod menu-grid;
-            </h1>
+            <div class="grids">
+        		<xsl:for-each select="data/ui-entry/i">
+        		
+        			<a href="{href}" class="grid">
+                        <img src="//a.oxm1.cc/img/blank.png" style="background-image:url({icon})"/>
+        				<b class="title">
+        					<xsl:value-of select="title"/>
+        				</b>
+        				
+        				<br/>
+                        <em class="subtitle">
+                            <xsl:value-of select="subtitle"/>
+                        </em>
+
+
+        				
+        			</a>
+            	</xsl:for-each>
+            </div>
         </div>
     </xsl:template>
 </xsl:stylesheet>
